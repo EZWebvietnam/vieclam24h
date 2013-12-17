@@ -52,14 +52,14 @@
             <div class="group-3col">
                 <?php
                             $i = 1;
-                            foreach ($list_cate_job as $job_cate) {
+                            foreach ($list_cate_job as $k=>$job_cate) {
 
                                 if ($i % 3 == 1) {
                                     ?>
                                     <?php } ?>
                                     <div class="col3">
                                             <div class="ten-chinh" style="font-weight:bold;color:black;">
-                                                <a href="<?php echo base_url(); ?>nganh-nghe/<?php echo $job_cate['m_id'] ?>-<?php echo mb_strtolower(url_title(removesign($job_cate['m_name']))) ?>" title="<?php echo $job_cate['m_name'] ?>"><?php echo $job_cate['m_name'] ?></a>
+                                                <a href="<?php echo base_url(); ?>nganh-nghe/<?php echo $k ?>-<?php echo mb_strtolower(url_title(removesign($job_cate))) ?>"  title="<?php echo $job_cate ?>" target="_blank"> <?php echo $job_cate ?></a>
                                             </div>
                                     </div>
                                     <?php
