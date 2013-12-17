@@ -27,17 +27,24 @@
                                                     </div>
                                                     <div id="right-header">
                                                         <div style="overflow: hidden;">
-                                                            <div>
-                                                                <div class="sigup-register-menu">
-                                                                    <a href="/ung-vien">Đăng nhập</a> | <a href="/candidate/register">Đăng ký</a>
-                                                                </div>
-                                                            </div>
+                                                                                                                       
                                                             <div id="block-block-62" class="block block-block odd">
 
                                                                 <div id="header-slogan">
                                                                     Trang Việc Làm Số 1 Việt Nam
                                                                 </div>
                                                             </div>
+                                                            <?php if ($is_login == 0) { ?>
+                                                            <div id="header-user-menu" class="sigup-register-menu">
+                                                                <a href="<?php echo base_url(); ?>dangnhap/index" ga_click="_gaq.push(['_trackEvent', 'Header', 'Click', 'Đăng nhập']);" title="Đăng nhập"> Đăng nhập </a>
+                                                                |         
+                                                                <a href="<?php echo base_url(); ?>dangky" ga_click="_gaq.push(['_trackEvent', 'Header', 'Click', 'Đăng ký']);" title="Đăng ký"> Đăng ký </a>                                                                                                                                            
+                                                            </div>
+                                                            <?php } else { ?> 
+                                                            <div id="header-user-menu" class="sigup-register-menu" style="font-size: 12px;font-weight: inherit;">
+                                                                <?php echo $this->session->userdata['u_username']; ?> <br> <a style="font-size: 12px;" href="<?php echo base_url(); ?>dangnhap/logout">Đăng xuất</a>
+                                                            </div>
+                                                            <?php } ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -109,7 +116,7 @@
                                                 <?php echo $this->load->view($main_content); ?>
 
                                         </div>
-                                        <div class="footerContainer">
+                                        <div class="footerContainer_ntd">
                                             <div class="footer">
                                                 <div class="footerMenu1">
                                                     <a href="/ntv-trang-chu-quan-tri.html" title="Quản lý tìm việc">Quản lý tìm việc</a> | <a href="/ntv-trang-quan-tri-tin-tim-viec.html" title="Hồ sơ đã đăng">Hồ sơ đã đăng</a> | <a href="/ntv-trang-quan-tri-cap-nhat-tin-tim-viec.html" title="Tạo HS tìm việc">Tạo HS tìm việc</a> | <a href="/ntv-trang-quan-tri-viec-lam-da-luu.html" title="Việc làm đã lưu">Việc làm đã lưu</a> | <a href="/ntv-trang-quan-tri-theo-doi-tin-tuyen-dung.html" title="NTD của tôi">NTD của tôi</a> | <a href="/ntv-trang-quan-tri-ho-so-ca-nhan.html" title="Hồ sơ cá nhân">Hồ sơ cá nhân</a> | <a href="/huong-dan/huong-dan-ntv-dang-ky-tai-khoan.html" title="Hướng dẫn">Hướng dẫn</a> | <a href="http://tongdaihotro.24h.com.vn/HoTroViecLam.html" title="HỖ TRỢ:1900 585 808 PHÍM 8" target="_blank">HỖ TRỢ:1900 585 808 PHÍM 8</a>

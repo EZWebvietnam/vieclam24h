@@ -3,7 +3,7 @@
         <div class="Content">
             <div id="login-1">
                 <h2>Đăng nhập Người tìm việc</h2>
-                <img src="<?php echo base_url(); ?>template/home/img/login.jpg" alt="Đăng nhập">
+                <img src="<?php echo base_url(); ?>template/home/images/login.jpg" alt="Đăng nhập">
                 <div class="HighBlank"></div>
                 <button type="button" id="button-seeker-login" >
                     <a href="<?php echo base_url(); ?>dangnhap"><span>Đăng nhập Người tìm việc</span> </a>
@@ -12,7 +12,7 @@
             </div>
             <div id="login-2">
                 <h2>Đăng nhập Nhà tuyển dụng</h2>
-                <img src="<?php echo base_url(); ?>template/home/img/register.jpg" alt="Đăng nhập">
+                <img src="<?php echo base_url(); ?>template/home/images/register.jpg" alt="Đăng nhập">
                 <div class="HighBlank"></div>
                 <button type="button" id="button-employer-login" >
                     <a href="<?php echo base_url(); ?>dangnhap"><span>Đăng nhập Nhà tuyển dụng</span></a>

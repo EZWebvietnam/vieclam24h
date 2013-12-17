@@ -60,8 +60,6 @@ $com_phone = array(
     'value' => set_value('com_phone'),
     'class' => 'W200');
 ?>
-<h1 class="PageTitle"> Đăng ký tài khoản Nhà tuyển dụng </h1>
-
 <div id="content-detail">
 
     <div class="GridInfo">
@@ -70,7 +68,7 @@ $com_phone = array(
             <h2>Đăng ký</h2>
 
             <div id="login-image">
-                <img src="<?php echo base_url(); ?>template/home/img/register_small.png" alt="Đăng ký">
+                <img src="<?php echo base_url(); ?>template/home/images/register_small.png" alt="Đăng ký">
             </div>
 
             <div id="login-panel">

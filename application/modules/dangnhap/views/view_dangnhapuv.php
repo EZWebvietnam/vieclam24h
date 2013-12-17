@@ -31,7 +31,7 @@ $password = array(
             <h2>Đăng nhập</h2>
 
             <div id="login-image">
-                <img src="<?php echo base_url(); ?>template/home/img/login_small.png" alt="Đăng nhập">        </div>
+                <img src="<?php echo base_url(); ?>template/home/images/login_small.png" alt="Đăng nhập">        </div>
 
             <div id="login-panel">
                 <form  enctype="multipart/form-data" id="SeekerNguoitimviecDangnhapForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div>            <table class="TableForm">

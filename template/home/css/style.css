@@ -38,7 +38,6 @@ img {
 	margin-top: 7px;
 	font-size: 24px;
 	text-align: center;
-	margin-right: 35px;
 	width: 340px;
 }
 .i18n-vi #new-header #header-slogan {
@@ -79,10 +78,11 @@ img {
 	top: 0;
 }
 #new-header .sigup-register-menu {
-	float: right;
+	float: center;
 	font-size: 14px;
 	font-weight: bold;
-	margin: 12px;
+	text-align: center;
+        padding-top: 15px;
 	position: inherit;
 }
 #new-header .sigup-register-menu > a {
@@ -124,12 +124,8 @@ body.section-cong-ty #new-header #header-slogan, body.section-company #new-heade
 body.section-company #right-header > div > div, body.section-cong-ty #right-header > div > div {
 	margin-top: 0;
 }
-#right-header > div > div:first-child {
-	width: 33%;
-}
 #right-header > div > div {
-	float: right;
-	margin-right: 5px;
+	float: left;
 	margin-top: 10px;
 	overflow: hidden;
 }
@@ -420,6 +416,412 @@ div.logo {
 	color: #fff000
 }
 
+.W12 {
+	width: 12px
+}
+.W16 {
+	width: 16px
+}
+.W50 {
+	width: 50px
+}
+.W60 {
+	width: 60px
+}
+.W80 {
+	width: 80px
+}
+.W100 {
+	width: 100px
+}
+.W120 {
+	width: 120px
+}
+.W173 {
+	width: 173px
+}
+.W177 {
+	width: 177px
+}
+.W162 {
+	width: 162px
+}
+.W189 {
+	width: 189px
+}
+.W200 {
+	width: 200px
+}
+.W237 {
+	width: 237px
+}
+.W245 {
+	width: 245px
+}
+.W247 {
+	width: 247px
+}
+.W300 {
+	width: 300px
+}
+.W350 {
+	width: 350px
+}
+.W400 {
+	width: 400px
+}
+.W490 {
+	width: 490px
+}
+.W500 {
+	width: 500px
+}
+.W600 {
+	width: 600px
+}
+.W700 {
+	width: 700px
+}
+.H200 {
+	height: 200px
+}
+.H300 {
+	height: 300px
+}
+.lh16 {
+	line-height: 16px
+}
+.pl10 {
+	padding-left: 10px
+}
+.pl15 {
+	padding-left: 15px
+}
+#policy {
+	width: 600px;
+	height: 300px;
+	overflow-y: auto;
+	border: 1px solid #C4CCE0
+}
+#policy-inner {
+	padding: 6px
+}
+.tbUser-row {
+	padding: 5px 10px 5px 20px;
+	line-height: 23px
+}
+.PageTitle{
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 16px;
+}
+.GridInfo {
+	background: #C4CCE0;
+	padding: 1px
+}
+.GridInfo .Content {
+	background: #FFF;
+	padding: 6px;
+	position: relative;
+	overflow: hidden;
+	line-height: 17px
+}
+.GridInfo .Blur {
+	background: #FFF;
+	position: absolute;
+	width: 692px;
+	height: 94%;
+	opacity: .7;
+	filter: alpha(opacity=70)
+}
+.GridInfo .expired {
+	background: url('../img/expired.gif') repeat scroll left top transparent;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: .7;
+	filter: alpha(opacity=70)
+}
+#login-image {
+	float: left;
+	margin-right: 6px
+}
+#login-panel {
+	float: left;
+	width: 334px
+}
+#login-ads {
+	float: right;
+	width: 500px
+}
+.Paginator {
+	margin-top: 6px;
+	text-align: center
+}
+.Paginator span {
+	padding: 0 3px;
+	font-weight: 700
+}
+.Paginator span.current {
+	color: #CF2B2A
+}
+.Paginator span a {
+	font-weight: 700
+}
+.TableForm {
+	border-collapse: collapse
+}
+.TableForm tr th {
+	text-align: left;
+	padding: 3px 6px 0 0;
+	white-space: nowrap;
+	vertical-align: top;
+	color: #666
+}
+.TableForm tr td {
+	vertical-align: top;
+	padding: 0 0 6px 0
+}
+.AlertText {
+	font-family: Arial;
+	font-size: 14px;
+	color: #CF2B2A
+}
+.AlertTextSmall {
+	color: #CF2B2A
+}
+.AlertExpired {
+	white-space: nowrap;
+	display: inline-block;
+	background: #E02B54;
+	color: #FFF;
+	padding: 1px 4px 2px 4px;
+	border-radius: 3px
+}
+.AlertMenu {
+	white-space: nowrap;
+	display: inline-block;
+	background: #1A638F;
+	color: #FFF;
+	padding: 1px 4px 2px 4px;
+	border-radius: 3px
+}
+.AlertActive {
+	white-space: nowrap;
+	display: inline-block;
+	background: #6AA74F;
+	color: #FFF;
+	padding: 1px 4px 2px 4px;
+	border-radius: 3px
+}
+.AlertVip {
+	white-space: nowrap;
+	display: inline-block;
+	background: #F1C232;
+	color: #000;
+	padding: 1px 4px 2px 4px;
+	border-radius: 3px
+}
+.AlertBan {
+	white-space: nowrap;
+	display: inline-block;
+	background: #5229A3;
+	color: #FFF;
+	padding: 1px 4px 2px 4px;
+	border-radius: 3px
+}
+.AlertHappyBirthday {
+	white-space: nowrap;
+	display: inline-block;
+	background: url('../img/birthday.png') no-repeat scroll left top transparent;
+	color: #B44443;
+	padding: 1px 0 1px 20px
+}
+.AlertMessage {
+	white-space: nowrap;
+	display: inline-block;
+	background: url('../img/message.png') no-repeat scroll left top transparent;
+	width: 16px;
+	height: 16px
+}
+.TableForm {
+	border-collapse: collapse
+}
+.TableForm tr th {
+	text-align: left;
+	padding: 3px 6px 0 0;
+	white-space: nowrap;
+	vertical-align: top;
+	color: #666
+}
+.TableForm tr td {
+	vertical-align: top;
+	padding: 0 0 6px 0
+}
+.TableField {
+	border-collapse: collapse
+}
+.TableField tr td {
+	padding: 0 12px 6px 0;
+	vertical-align: top
+}
+.TableField tr td label {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+	margin-left: 2px
+}
+.TableLogo {
+	border-collapse: collapse;
+	width: 100%
+}
+.TableLogo tr td {
+	vertical-align: top;
+	text-align: center
+}
+.Mandatory {
+	color: #CF2B2A;
+	font-weight: 700;
+	margin-left: 3px
+}
+#login-1{
+    float: left;
+    width: 484px;
+    text-align: center;
+}
+.HighBlank{
+    clear: both;
+    height: 10px;
+}
+#login-2{
+    float: left;
+    width: 484px;
+    text-align: center;
+}
+.clear {
+    clear: both;
+}
+h1.PageTitle {
+	padding-left: 20px;
+	font-weight: 400;
+	font-size: 16px
+}
+h2 {
+	font-family: Arial !important;
+	padding: 0;
+	margin: 0 0 12px 0;
+	font-size: 14px;
+	color: #0660AB
+}
+h2 a {
+	font-family: Arial;
+	padding: 0;
+	margin: 0 0 12px 0;
+	font-size: 14px;
+	color: #0660AB
+}
+h2 a:hover {
+	color: #0660AB
+}
+p {
+	padding: 0;
+	margin: 0 0 6px 0
+}
+br {
+	padding: 0;
+	margin: 0 0 6px 0
+}
+a {
+	color: #000;
+	text-decoration: none
+}
+a:hover {
+	color: #CF2B2A
+}
+a img {
+	border: 0;
+	cursor: pointer
+}
+a span {
+	cursor: pointer
+}
+a.UnderlineLink {
+	color: #000;
+	text-decoration: underline
+}
+a.Delete {
+	display: block;
+	margin-top: 2px
+}
+a.ImageLink {
+	display: block
+}
+a.Label {
+	color: #1C2A47;
+	background: #E2E6F0;
+	border: 1px solid #9DACCC;
+	border-radius: 3px;
+	display: inline-block;
+	padding: 1px 3px 2px 3px;
+	margin-bottom: 6px
+}
+a.Tags {
+	color: #666;
+	display: inline-block;
+	padding: 1px 3px 2px 3px;
+	margin-bottom: 6px;
+	text-decoration: underline
+}
+a.AlertLink {
+	color: #E02B54
+}
+a.Readmore {
+	color: #CF2B2A;
+	text-decoration: underline
+}
+form {
+	padding: 0;
+	margin: 0
+}
+form * {
+	font-size: 11px
+}
+input[type="text"] {
+	padding: 3px;
+	font-size: 11px
+}
+input[type="password"] {
+	padding: 3px
+}
+input[type="file"] {
+	font-size: 11px
+}
+textarea {
+	font-size: 11px;
+	padding: 3px
+}
+select {
+	font-size: 11px;
+	padding: 3px 1px 3px 1px;
+	width: 208px
+}
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0
+}
+button {
+	font-size: 11px;
+	cursor: pointer;
+	overflow: visible;
+	width: auto;
+	padding: 3px 6px
+}
+button span {
+	display: block
+}
+.content-qlhs{
+        background: #fff;
+}
 .menu-sub {
 	height: 32px;
 	background: url('../images/sprites-repeat.gif') 0 -90px repeat-x;
@@ -735,12 +1137,16 @@ div.logo {
 	padding: 0px 0 10px 0
 }
 .searchBoxTitle {
-	background: url('../images/sprites.gif') no-repeat 0px -1050px;
-	color: #fff;
+        text-align: left;
+        left: 10px;
+        width: 259px;
+        background: #eee;
+        border-top: 2px solid #fff;
+	color: #5F4FF4;
 	font-weight: bold;
 	font-size: 17px;
-	padding: 6px 5px 9px 50px;
-	position: relative
+	padding: 6px 5px 9px 25px;
+	position: relative;
 }
 .searchBoxLine {
 	background: url('../images/line-grey.gif') repeat-x bottom;
@@ -753,11 +1159,24 @@ div.logo {
 	right: 5px;
 	top: 5px
 }
+.TableTableSearchForm1{
+	width: 1000px;
+}
+.TableSearchForm {
+	border-collapse: collapse
+}
+.TableSearchForm tr th {
+        padding-top: 8px;
+	text-align: left
+}
+.TableSearchForm tr td {
+	padding-bottom: 5px
+}
 .searchBox-DK {
-	border: #dfdfdf 1px solid;
+ 	border: #dfdfdf 1px solid;
 	background: #fff;
-	padding: 0 10px 0 10px;
-	width: 258px;
+	padding: 0 6px 0 6px;
+	width: 275px;
 	margin: 0px 10px 0 10px
 }
 .searchGroup {

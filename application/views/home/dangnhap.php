@@ -17,7 +17,6 @@
                                     <script type="text/javascript" src="<?php echo base_url(); ?>template/home/js/vieclam.js"></script>
                                     </head>
                                     <body>
-
                                         <a name="StartOfPage"></a>
                                         <div class="container">
                                             <header id="new-header" role="banner">
@@ -27,17 +26,24 @@
                                                     </div>
                                                     <div id="right-header">
                                                         <div style="overflow: hidden;">
-                                                            <div>
-                                                                <div class="sigup-register-menu">
-                                                                    <a href="/ung-vien">Đăng nhập</a> | <a href="/candidate/register">Đăng ký</a>
-                                                                </div>
-                                                            </div>
+                                                                                                                       
                                                             <div id="block-block-62" class="block block-block odd">
 
                                                                 <div id="header-slogan">
                                                                     Trang Việc Làm Số 1 Việt Nam
                                                                 </div>
                                                             </div>
+                                                            <?php if ($is_login == 0) { ?>
+                                                            <div id="header-user-menu" class="sigup-register-menu">
+                                                                <a href="<?php echo base_url(); ?>dangnhap/index" ga_click="_gaq.push(['_trackEvent', 'Header', 'Click', 'Đăng nhập']);" title="Đăng nhập"> Đăng nhập </a>
+                                                                |         
+                                                                <a href="<?php echo base_url(); ?>dangky" ga_click="_gaq.push(['_trackEvent', 'Header', 'Click', 'Đăng ký']);" title="Đăng ký"> Đăng ký </a>                                                                                                                                            
+                                                            </div>
+                                                            <?php } else { ?> 
+                                                            <div id="header-user-menu" class="sigup-register-menu" style="font-size: 12px;font-weight: inherit;">
+                                                                <?php echo $this->session->userdata['u_username']; ?> <br> <a style="font-size: 12px;" href="<?php echo base_url(); ?>dangnhap/logout">Đăng xuất</a>
+                                                            </div>
+                                                            <?php } ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -105,7 +111,7 @@
                                                     v_menu_selected = document.getElementById("hdn_menu_selected");
                                                     change_menu_onclick(v_menu_selected.value);
                                                 </script>
-
+                                                
                                                 <?php echo $this->load->view($main_content); ?>
 
                                         </div>

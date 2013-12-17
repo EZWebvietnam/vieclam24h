@@ -34,7 +34,6 @@ $confirm_password = array(
     'maxlength' => $this->config->item('password_max_length', 'tank_auth'),
     'class' => 'W200');
 ?>
-<h1 class="PageTitle"> Đăng ký tài khoản Người tìm việc </h1>
 <div id="content-detail">
 
     <div class="GridInfo">
@@ -43,7 +42,7 @@ $confirm_password = array(
             <h2>Đăng ký</h2>
 
             <div id="login-image">
-                <img src="<?php echo base_url(); ?>template/home/img/register_small.png" alt="Đăng ký">
+                <img src="<?php echo base_url(); ?>template/home/images/register_small.png" alt="Đăng ký">
             </div>
 
             <div id="login-panel">

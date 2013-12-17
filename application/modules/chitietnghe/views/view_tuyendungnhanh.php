@@ -1,254 +1,162 @@
 <div class="content" style="background: none repeat scroll 0 0 #FFFFFF;">
     <div class="colLeft">
         <div class="navBar-vl-hot">
-            <div class="navBarLeft"><h2><span class="navBarTxt24-1">Việc làm</span>&nbsp;<input src="<?php echo base_url() ?>template/home/images/icon-hot-big.gif" type="image"></h2></div>
+            <div class="navBarLeft"><h2><span class="navBarTxt24-1">Việc làm</span>&nbsp;<input src="http://localhost/vieclam24h/template/home/images/icon-hot-big.gif" type="image"><span class="navBar-tennganh">ngành Kế toán-Kiểm toán</span></h2></div>
             <div class="navBarRight"><a href="/dang-viec-lam-tinh-phi.html" title="" class="dangTinVip">Tuyển dụng hiệu quả</a></div>
             <div class="clear"></div>
         </div>
         <div class="group-3col">
             <div class="vieclamhot-t-ntv"></div>
-            <div class="vieclamhot-c-ntv">                
+            <div class="vieclamhot-c-ntv">
+                <?php
+                $i = 1;
+                foreach ($tuyendung_detail as $job) {
+                    if ($i % 2 == 1) {
+                        ?>
+
+                    <?php } ?>
+                    <div class="col3">
+                        <div class="vieclamItem">
+                            <div class="ten-chinh"><a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $job['e_id'] ?>-<?php echo mb_strtolower(url_title(removesign($job['e_title']))) ?>" title="<?php echo $job['e_title'] ?>" style="font-weight:bold;"><?php echo $job['e_title'] ?></a></div>
+                            <div class="ten-phu"><a href="#" title="<?php echo $job['u_companyName'] ?>"><?php echo $job['u_companyName'] ?></a></div>
+                            <div></div>
+                        </div>
+                    </div>
                     <?php
-                            $i = 1;
-                            foreach ($tuyendung_detail as $job) {
-                        if ($i % 2 == 1) {
-                                    ?>
-                                
-                                    <?php } ?>
-                            <div class="col3">
-                                <div class="vieclamItem">
-                                    <div class="ten-chinh"><a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $job['e_id'] ?>-<?php echo mb_strtolower(url_title(removesign($job['e_title']))) ?>" title="<?php echo $job['e_title'] ?>" style="font-weight:bold;"><?php echo $job['e_title'] ?></a></div>
-                                    <div class="ten-phu"><a href="#" title="<?php echo $job['u_companyName'] ?>"><?php echo $job['u_companyName'] ?></a></div>
-                                    <div></div>                                    
-                                </div>
-                            </div>
-                                <?php
-                                    if ($i % 2 == 0) {
-                                        ?>
-                                    
-                                <?php } ?>
-                                <?php
-                                $i++;
-                            }
-                            ?>                    
+                    if ($i % 2 == 0) {
+                        ?>
+
+                    <?php } ?>
+                    <?php
+                    $i++;
+                }
+                ?>
                 <div class="clear"></div>
                 <div class="chiTiet"><a href="/viec-lam-hot-l75c0.html" title="Xem danh sách việc làm HOT">Xem danh sách chi tiết</a></div>
             </div>
             <div class="vieclamhot-b-ntv"></div>
-        </div>        
-        <div id="div_ds_nganh_nghe_trang_chu_ntv">
-            <div class="barSub">
-                <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                    <tbody><tr>
-                            <td width="40%" align="left">
-                                <h3>Danh sách ngành nghề</h3>
-                            </td>
-                            <td width="50%" align="right" style="font-size: 13px;color: #FFFF33;">
-                                Sắp xếp theo: <a href="javascript:ds_nganh_nghe_trang_chu_ntv_theo_ten();" style="font-size: 13px;color: #FFFF33;">ABC</a> 
-                    </td>
-                    </tr>
-                    </tbody></table>
-            </div>
-            <div class="group-3col">
-                <?php
-                            $i = 1;
-                            foreach ($list_cate_job as $k=>$job_cate) {
-
-                                if ($i % 3 == 1) {
-                                    ?>
-                                    <?php } ?>
-                                    <div class="col3">
-                                            <div class="ten-chinh" style="font-weight:bold;color:black;">
-                                                <a href="<?php echo base_url(); ?>nganh-nghe/<?php echo $k ?>-<?php echo mb_strtolower(url_title(removesign($job_cate))) ?>"  title="<?php echo $job_cate ?>" target="_blank"> <?php echo $job_cate ?></a>
-                                            </div>
-                                    </div>
-                                    <?php
-                                    if ($i % 3 == 0) {
-                                        ?>
-                                <?php } ?>
-                                <?php
-                                $i++;
-                            }
-                            ?>
-                <div class="clear"></div>
-            </div>
-
         </div>
+        <a name="a_ntv_viec_lam_theo_nganh_nghe"></a>
+        <div style="background:#fff;" id="div_ntv_viec_lam_theo_nganh_nghe">
+            <input type="hidden" name="tongtin" id="tongtin" value="20">
+            <div id="message"></div>
+            <div class="barSub"><h3>Việc làm ngành Kế toán-Kiểm toán</h3><div class="barSub-dt-hotro" style="left: 490px;">ĐT hỗ trợ: 1900 585 808 PHÍM 8</div></div>
+            <div class="group-3col">
+                <form name="frm_viec_lam_nhieu_nguoi_xem" method="post" action="">
+                    <input type="hidden" name="dang_luu_tin" id="dang_luu_tin" value="">
+                    <input type="hidden" name="tong_tin" id="tong_tin" value="20">
+                    <input type="hidden" name="checkedvalues" id="checkedvalues" value="0">
+                    <input type="hidden" name="mo_ta_list" id="mo_ta_list" value="">
+                    <input type="hidden" name="nganh_list" id="nganh_list" value="">
+                    <input type="hidden" name="tieu_de_list" id="tieu_de_list" value="">
+                    <input type="hidden" name="tai_khoan_list" id="tai_khoan_list" value="">
+                    <table width="100%">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="padLeft10 marBot7">
+                                        <a class="luuTin" title="" href="javascript:ntv_luu_tin();">Lưu tin</a>
+                                        <a class="guiBanBe" title="" href="javascript:gui_mail_ban_be();">Gửi cho bạn bè</a>
+                                        <a class="toCao" title="" href="javascript:ntv_to_cao();">Tố cáo</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="pageList"><u class="pageFirst">Đầu</u> <u>1</u> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=2">2</a> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=3">3</a> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=4">4</a> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=5">5</a> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=10"><u class="pageLast" style="color:#F20000;">Cuối</u></a></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-        <div name="div_ntv_viec_lam_moi_nhat_trang_chu" id="div_ntv_viec_lam_moi_nhat_trang_chu">
-            <div class="barSub">
-                <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                    <tbody><tr>
-                            <td width="40%" align="left">
-                                <h3>Việc làm mới nhất</h3>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody><tr>
+                                <td width="10" class="tb-header"><input type="checkbox" onclick="javascript:check_all(this, 20, & quot; chk_item & quot; )" id="checkall"></td>
+                                <td width="140" class="tb-header">Tên việc làm</td>
+                                <td width="100" class="tb-header">Tên công ty</td>
+                                <td width="70" class="tb-header">Nơi làm việc</td>
+                                <td width="70" class="tb-header">Mức lương</td>
+                                <td width="60" class="tb-header">Ngày làm mới</td>
+                                <td width="60" class="tb-header">Hạn nộp HS</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tb-row-W"><input type="checkbox" id="chk_item0" value="1388326" name="chk_item[]"></td>
+                                <td class="tb-row-W"><b><a href="/ke-toan-kiem-toan/ke-toan-kho-c30p1id1388326.html" onmouseover="tooltip.show('&lt;table width=220 cellpadding=1 cellspacing=1 border=0 bgcolor=#d7d7d7&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 colspan=2&gt;&lt;span class=textBoldBlue14&gt;Kế toán kho&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 style=&quot;width:60px;&quot;&gt;&lt;span class=textBoldBlue14&gt;Công ty: &lt;/span&gt;&lt;/td&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;VPS Applied Science Co. ltd&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;Số lượng: &lt;/span&gt;&lt;/td&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;1&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 colspan=2&gt;&lt;span class=textBoldRed14&gt;Mô tả công việc: &lt;/span&gt;&lt;br/&gt;&lt;div class=textBoldBlack14 style=&quot;padding-left:15px;padding-top:5px;&quot;&gt;-         Lập chứng từ nhập xuất, chi phí mua hàng, hoá đơn bán hàng và kê khai thuế đầu vào đầu ra.&lt;br/&gt;-         Hạch toán doanh thu, giá vốn, công nợ.&lt;br/&gt;-         Theo dõi công nợ, lập biên bản xác minh công nợ theo định kỳ &amp;#40;hoăc khi có...&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;');" onmouseout="tooltip.hide();" title="Kế toán kho" class="linkBlack">Kế toán kho</a><span class="txtNew">(Mới)</span></b><br><i class="text11soluong">(4569 lượt xem)</i></td>
+                                <td class="tb-row-W"><a class="linkBlack" style="color: #000000; text-align:center;" title="VPS Applied Science Co. ltd" href="/danh-sach-cac-tin-tuyen-dung-vps-applied-science-co-ltd-ntd1769576p1.html">VPS Applied Science Co. ltd</a></td>
+                                <td class="tb-row-W" title="Hưng Yên" style="color: #000000; text-align:center;">Hưng Yên</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">Thỏa thuận</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">17-12</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">30-12						<input type="hidden" id="mo_ta0" value="-         Lập chứng từ nhập xuất, chi phí mua hàng, hoá đơn bán hàng và kê khai thuế đầu vào đầu ra.
+                                                                                                                  -...">
+                                    <input type="hidden" id="tieu_de0" value="Kế toán kho">
+                                    <input type="hidden" id="nganh_cap_10" value="30">
+                                    <input type="hidden" id="tai_khoan0" value="1769576">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tb-row-W"><input type="checkbox" id="chk_item1" value="1409243" name="chk_item[]"></td>
+                                <td class="tb-row-W"><b><a href="/ke-toan-kiem-toan/ke-toan-tong-hop-c30p1id1409243.html" onmouseover="tooltip.show('&lt;table width=220 cellpadding=1 cellspacing=1 border=0 bgcolor=#d7d7d7&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 colspan=2&gt;&lt;span class=textBoldBlue14&gt;Kế toán tổng hợp&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 style=&quot;width:60px;&quot;&gt;&lt;span class=textBoldBlue14&gt;Công ty: &lt;/span&gt;&lt;/td&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;Công ty Cổ phần Thanh toán Điện tử VNPT&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;Số lượng: &lt;/span&gt;&lt;/td&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;1&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 colspan=2&gt;&lt;span class=textBoldRed14&gt;Mô tả công việc: &lt;/span&gt;&lt;br/&gt;&lt;div class=textBoldBlack14 style=&quot;padding-left:15px;padding-top:5px;&quot;&gt;O	Kiểm soát, hạch toán số liệu về toàn bộ Doanh thu hàng hóa dịch vụ của công ty.&lt;br/&gt;o	Kiểm soát, hạch toán số liệu công nợ phải thu của công ty chính xác,đúng đối tượng, đáp ứng đúng yêu cầu công việc.&lt;br/&gt;o	Phụ trách, chịu trách...&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;');" onmouseout="tooltip.hide();" title="Kế toán tổng hợp" class="linkBlack">Kế toán tổng hợp</a><span class="txtNew">(Mới)</span></b><br><i class="text11soluong">(1177 lượt xem)</i></td>
+                                <td class="tb-row-W"><a class="linkBlack" style="color: #000000; text-align:center;" title="Công ty Cổ phần Thanh toán Điện tử VNPT" href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-thanh-toan-dien-tu-vnpt-ntd2338365p1.html">Công ty Cổ phần Thanh toán Điện tử VNPT</a></td>
+                                <td class="tb-row-W" title="Hà Nội" style="color: #000000; text-align:center;">Hà Nội</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">Thỏa thuận</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">17-12</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">20-12						<input type="hidden" id="mo_ta1" value="O	Kiểm soát, hạch toán số liệu về toàn bộ Doanh thu hàng hóa dịch vụ của công ty.
+                                                                                                                  o	Kiểm soát, hạch toán...">
+                                    <input type="hidden" id="tieu_de1" value="Kế toán tổng hợp">
+                                    <input type="hidden" id="nganh_cap_11" value="30">
+                                    <input type="hidden" id="tai_khoan1" value="2338365">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tb-row-W"><input type="checkbox" id="chk_item18" value="1414022" name="chk_item[]"></td>
+                                <td class="tb-row-W"><b><a href="/ke-toan-kiem-toan/ke-toan-kho-c30p1id1414022.html" onmouseover="tooltip.show('&lt;table width=220 cellpadding=1 cellspacing=1 border=0 bgcolor=#d7d7d7&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 colspan=2&gt;&lt;span class=textBoldBlue14&gt;Kế toán kho&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 style=&quot;width:60px;&quot;&gt;&lt;span class=textBoldBlue14&gt;Công ty: &lt;/span&gt;&lt;/td&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;Nhà hàng Hàm Cá mập - Hà Nội&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;Số lượng: &lt;/span&gt;&lt;/td&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;1&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 colspan=2&gt;&lt;span class=textBoldRed14&gt;Mô tả công việc: &lt;/span&gt;&lt;br/&gt;&lt;div class=textBoldBlack14 style=&quot;padding-left:15px;padding-top:5px;&quot;&gt;Theo dõi quá trình Nhập - Xuất - Tồn hàng hóa trong kho.&lt;br/&gt;Mở thẻ kho theo dõi.&lt;br/&gt;Sử dụng nhập, xuất, hủy trên phầm mềm.&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;');" onmouseout="tooltip.hide();" title="Kế toán kho" class="linkBlack">Kế toán kho</a><span class="txtNew">(Mới)</span></b><br><i class="text11soluong">(36 lượt xem)</i></td>
+                                <td class="tb-row-W"><a class="linkBlack" style="color: #000000; text-align:center;" title="Nhà hàng Hàm Cá mập - Hà Nội" href="/danh-sach-cac-tin-tuyen-dung-nha-hang-ham-ca-map-ha-noi-ntd2357282p1.html">Nhà hàng Hàm Cá mập - Hà Nội</a></td>
+                                <td class="tb-row-W" title="Hà Nội" style="color: #000000; text-align:center;">Hà Nội</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">Thỏa thuận</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">17-12</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">03-03						<input type="hidden" id="mo_ta18" value="Theo dõi quá trình Nhập - Xuất - Tồn hàng hóa trong kho.
+                                                                                                                  Mở thẻ kho theo dõi.
+                                                                                                                  Sử dụng nhập, xuất, hủy trên...">
+                                    <input type="hidden" id="tieu_de18" value="Kế toán kho">
+                                    <input type="hidden" id="nganh_cap_118" value="30">
+                                    <input type="hidden" id="tai_khoan18" value="2357282">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tb-row-W"><input type="checkbox" id="chk_item19" value="1414685" name="chk_item[]"></td>
+                                <td class="tb-row-W"><b><a href="/ke-toan-kiem-toan/ke-toan-truong-c30p1id1414685.html" onmouseover="tooltip.show('&lt;table width=220 cellpadding=1 cellspacing=1 border=0 bgcolor=#d7d7d7&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 colspan=2&gt;&lt;span class=textBoldBlue14&gt;Kế Toán Trưởng&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 style=&quot;width:60px;&quot;&gt;&lt;span class=textBoldBlue14&gt;Công ty: &lt;/span&gt;&lt;/td&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;Công ty TNHH Khánh Xương&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;Số lượng: &lt;/span&gt;&lt;/td&gt;&lt;td class=DSTT_row_L14 &gt;&lt;span class=textBoldBlue14&gt;1&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td class=DSTT_row_L14 colspan=2&gt;&lt;span class=textBoldRed14&gt;Mô tả công việc: &lt;/span&gt;&lt;br/&gt;&lt;div class=textBoldBlack14 style=&quot;padding-left:15px;padding-top:5px;&quot;&gt;-	Tổ chức bộ máy kế toán, phân công nhiệm vụ kế toán cho từng kế toán viên.&lt;br/&gt;-	Hướng dẫn, kiểm tra, giám sát công việc của kế toán viên thực hiện theo đúng quy định Pháp Luật của Nhà nước.&lt;br/&gt;-	Hàng tháng vào ngày 5 tây gửi báo...&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;');" onmouseout="tooltip.hide();" title="Kế Toán Trưởng" class="linkBlack">Kế Toán Trưởng</a><span class="txtNew">(Mới)</span></b><br><i class="text11soluong">(0 lượt xem)</i></td>
+                                <td class="tb-row-W"><a class="linkBlack" style="color: #000000; text-align:center;" title="Công ty TNHH Khánh Xương" href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-khanh-xuong-ntd2392879p1.html">Công ty TNHH Khánh Xương</a></td>
+                                <td class="tb-row-W" title="Long An" style="color: #000000; text-align:center;">Long An</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">10 – 15 triệu</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">17-12</td>
+                                <td class="tb-row-W" style="color: #000000; text-align:center;">31-01						<input type="hidden" id="mo_ta19" value="-	Tổ chức bộ máy kế toán, phân công nhiệm vụ kế toán cho từng kế toán viên.
+                                                                                                                  -	Hướng dẫn, kiểm tra,...">
+                                    <input type="hidden" id="tieu_de19" value="Kế Toán Trưởng">
+                                    <input type="hidden" id="nganh_cap_119" value="30">
+                                    <input type="hidden" id="tai_khoan19" value="2392879">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    <iframe name="fr_submit" id="fr_submit" width="0" height="0" style="visibility:hidden"></iframe>
+                </form>
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="padLeft10 marBot7">
+                                    <a class="luuTin" title="" href="javascript:ntv_luu_tin();">Lưu tin</a>
+                                    <a class="guiBanBe" title="" href="javascript:gui_mail_ban_be();">Gửi cho bạn bè</a>
+                                    <a class="toCao" title="" href="javascript:ntv_to_cao();">Tố cáo</a>
+                                </div>
                             </td>
-                            <td width="50%" align="right" style="font-size: 13px;font-weight: bold;color: white">
-                                Chọn tỉnh
-                                <select class="dropbox" style="width:130px; background: #f0e9f9;" name="vl_moi_nhat_select_tinh" id="vl_moi_nhat_select_tinh" onchange="viec_lam_moi_nhat_trang_chu_chon_1_tinh()">
-                                    <option value="-1">-- Tất cả --</option>
-                                    <option value="2">Hà Nội</option><option value="1">TP. HCM</option><option value="23">Đà Nẵng</option><option value="9">Bình Dương</option><option value="21">Cần Thơ</option><option value="22">Hải Phòng</option><option value="53">Bà Rịa - Vũng Tàu</option><option value="91">Bắc Giang</option><option value="92">Bắc Kạn</option><option value="94">Thừa Thiên Huế</option><option value="32">Bắc Ninh</option><option value="90">Bến Tre</option><option value="93">Bạc Liêu</option><option value="89">Bình Định</option><option value="88">Bình Phước</option><option value="87">Bình Thuận</option><option value="86">Cà Mau</option><option value="85">Cao Bằng</option><option value="84">Cửu Long</option><option value="83">Đắc Lắc</option><option value="52">An Giang</option><option value="82">Đắc Nông</option><option value="81">Điện Biên</option><option value="19">Đồng Nai</option><option value="80">Đồng Tháp</option><option value="79">Gia Lai</option><option value="78">Hà Giang</option><option value="77">Hà Nam</option><option value="76">Hà Tĩnh</option><option value="27">Hải Dương</option><option value="75">Hậu Giang</option><option value="74">Hòa Bình</option><option value="26">Hưng Yên</option><option value="73">Khánh Hòa</option><option value="72">Kiên Giang</option><option value="71">Kon Tum</option><option value="70">Lai Châu</option><option value="69">Lạng Sơn</option><option value="68">Lào Cai</option><option value="67">Lâm Đồng</option><option value="66">Long An</option><option value="65">Nam Định</option><option value="64">Nghệ An</option><option value="63">Ninh Bình</option><option value="62">Ninh Thuận</option><option value="61">Phú Thọ</option><option value="60">Phú Yên</option><option value="59">Quảng Bình</option><option value="58">Quảng Nam</option><option value="30">Quảng Ngãi</option><option value="57">Quảng Ninh</option><option value="56">Quảng Trị</option><option value="55">Sóc Trăng</option><option value="54">Sơn La</option><option value="51">Tây Ninh</option><option value="50">Thái Bình</option><option value="49">Thái Nguyên</option><option value="48">Thanh Hóa</option><option value="47">Tiền Giang</option><option value="46">Trà Vinh</option><option value="45">Tuyên Quang</option><option value="44">Vĩnh Long</option><option value="43">Vĩnh Phúc</option><option value="42">Yên Bái</option><option value="95">Toàn quốc</option><option value="96">Miền Bắc</option><option value="98">Miền Nam</option><option value="97">Miền Trung</option>				</select>
+                            <td>
+                                <div class="pageList"><u class="pageFirst">Đầu</u> <u>1</u> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=2">2</a> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=3">3</a> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=4">4</a> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=5">5</a> &nbsp;<a href="/ke-toan-kiem-toan-c30.html?hdn_tu_khoa=&amp;hdn_nganh_nghe_cap1=30&amp;hdn_dia_diem=-1&amp;hdn_muc_luong=-1&amp;hdn_cap_bac=-1&amp;hdn_bang_cap=-1&amp;hdn_kinh_nghiem=-1&amp;hdn_tong=200&amp;number_items=20&amp;page=10"><u class="pageLast" style="color:#F20000;">Cuối</u></a></div>
                             </td>
                         </tr>
-                    </tbody></table>
+                    </tbody>
+                </table>
             </div>
-            <div class="group-3col"><div class="col3">
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ban-hang/nhan-vien-ban-hang-c63p1id1367669.html" title="Nhân viên bán hàng">Nhân viên bán hàng</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-fourseasons-global-jsc-ntd2329457p1.html" title="Fourseasons Global JSC">Fourseasons Global JSC</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ban-hang/quan-ly-cua-hang-c63p1id1405793.html" title="Quản lý Cửa hàng">Quản lý Cửa hàng</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-fourseasons-global-jsc-ntd2329457p1.html" title="Fourseasons Global JSC">Fourseasons Global JSC</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ban-hang/cua-hang-truong-moschino-c63p1id1410377.html" title="Cửa hàng trưởng Moschino">Cửa hàng trưởng Moschino</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-fourseasons-global-jsc-ntd2329457p1.html" title="Fourseasons Global JSC">Fourseasons Global JSC</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/dien-tu-vien-thong/tuyen-gap-nhan-vien-cskh-mang-vinaphone-c54p1id1408193.html" title="Tuyển gấp nhân viên CSKH Mạng Vinaphone">Tuyển gấp nhân viên CSKH...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-mocap-viet-nam-ntd1814458p1.html" title="Công ty Cổ phần Mocap Việt Nam">Công ty Cổ phần Mocap...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/to-chuc-su-kien-qua-tang/nhan-vien-tu-van-to-chuc-su-kien-c83p1id1405942.html" title="Nhân viên tư vấn tổ chức sự kiện">Nhân viên tư vấn tổ chức...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-van-hoa-truyen-thong-new-ntd1994331p1.html" title="Công ty TNHH Văn hóa Truyền Thông NEW">Công ty TNHH Văn hóa Truyền...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/dien-dien-tu/instrument-engineer-5-candidates-c8p1id1089898.html" title="Instrument Engineer - 5 candidates">Instrument Engineer - 5 candidates</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-toyo-vietnam-ntd1828769p1.html" title="Toyo Vietnam">Toyo Vietnam</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/nhan-vien-kinh-doanh/nhan-vien-kinh-doanh-c96p1id1412610.html" title="Nhân viên kinh doanh">Nhân viên kinh doanh</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-chau-a-toan-cau-ntd2390252p1.html" title="Công Ty Cổ Phần Châu Á – Toàn Cầu">Công Ty Cổ Phần Châu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-cung/mang/nhan-vien-quan-tri-mang-nhan-vien-seo-c5p1id1412285.html" title="Nhân viên quản trị mạng, nhân viên Seo">Nhân viên quản trị mạng,...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-thiet-ke-xay-dung-kien-truc-viet-ntd2298709p1.html" title="Công ty CP Thiết Kế - Xây dựng Kiến Trúc Việt">Công ty CP Thiết Kế...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ky-thuat/truong-phong-ky-thuat-c16p1id687077.html" title="Trưởng phòng kỹ thuật">Trưởng phòng kỹ thuật</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-dau-tu-xay-dung-cat-tuong-ntd738863p1.html" title="Công ty Cổ Phần Đầu Tư Xây Dựng Cát Tường">Công ty Cổ Phần Đầu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/thuc-tap/thuc-tap-lap-trinh-web-hay-soft-c52p1id1336050.html" title="Thực tập lập trình web hay Soft">Thực tập lập trình web...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-tnhh-tm-dv-khai-hop-ntd2096242p1.html" title="TNHH TM DV Khai Hợp">TNHH TM DV Khai Hợp</a></div>
-                        <div></div>
-                    </div></div><div class="col3">
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-mem/seniornet-c74p1id1411188.html" title="Senior.NET">Senior.NET</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-cong-nghe-jupitech-viet-nam-ntd2349609p1.html" title="Công ty TNHH Công Nghệ Jupitech Việt Nam">Công ty TNHH Công Nghệ...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-mem/tuyen-nhan-vien-lap-trinh-tren-ios-c74p1id1411109.html" title="Tuyển nhân viên lập trình trên iOS">Tuyển nhân viên lập trình...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-cong-nghe-jupitech-viet-nam-ntd2349609p1.html" title="Công ty TNHH Công Nghệ Jupitech Việt Nam">Công ty TNHH Công Nghệ...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-mem/phan-tich-web-c74p1id1406783.html" title="Phân tích web">Phân tích web</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-vcn-corp-ntd1596371p1.html" title="VCN Corp">VCN Corp</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/buu-chinh/nhan-vien-truc-tong-dai-vinaphone-c2p1id1408197.html" title="Nhân viên trực tổng đài Vinaphone">Nhân viên trực tổng đài...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-mocap-viet-nam-ntd1814458p1.html" title="Công ty Cổ phần Mocap Việt Nam">Công ty Cổ phần Mocap...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/thu-ky-tro-ly/tro-ly-kinh-doanh-ban-hang-c91p1id1148342.html" title="Trợ lý kinh doanh bán hàng">Trợ lý kinh doanh bán hàng</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-may-trac-dia-nam-phuong-ntd1227095p1.html" title="Công ty TNHH Máy Trắc địa Nam Phương">Công ty TNHH Máy Trắc...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/dau-khi-hoa-chat/instrument-engineer-05-candidates-c6p1id1089897.html" title="Instrument Engineer  05 candidates">Instrument Engineer  05 candidates</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-toyo-vietnam-ntd1828769p1.html" title="Toyo Vietnam">Toyo Vietnam</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/bao-ve/nhan-vien-bao-ve-hoi-so-vpbank-c94p1id1360306.html" title="Nhân viên Bảo vệ Hội sở VPBank">Nhân viên Bảo vệ Hội...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-dich-vu-bao-ve-thinh-an-ntd2055092p1.html" title="Công ty CP Dịch vụ Bảo vệ Thịnh An">Công ty CP Dịch vụ Bảo...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ke-toan-kiem-toan/ke-toan-tong-hop-c30p1id938454.html" title="Kế toán tổng hợp">Kế toán tổng hợp</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-dau-tu-xay-dung-cat-tuong-ntd738863p1.html" title="Công ty Cổ Phần Đầu Tư Xây Dựng Cát Tường">Công ty Cổ Phần Đầu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/xay-dung/chi-huy-truong-cong-trinh-c41p1id488812.html" title="Chỉ huy trưởng công trình">Chỉ huy trưởng công trình</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-dau-tu-xay-dung-cat-tuong-ntd738863p1.html" title="Công ty Cổ Phần Đầu Tư Xây Dựng Cát Tường">Công ty Cổ Phần Đầu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/hanh-chinh-van-phong/tuyen-gap-nhan-vien-hanh-chinh-van-thu-c38p1id1326692.html" title="Tuyển gấp Nhân viên hành chính văn thư">Tuyển gấp Nhân viên hành...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-tri-tue-viet-vietclever-group-ntd2080519p1.html" title="Công ty CP Trí Tuệ Việt (VietClever Group)">Công ty CP Trí Tuệ Việt...</a></div>
-                        <div></div>
-                    </div></div><div class="col3">
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-mem/tuyen-nhan-vien-php-c74p1id1411183.html" title="Tuyển nhân viên Php">Tuyển nhân viên Php</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-cong-nghe-jupitech-viet-nam-ntd2349609p1.html" title="Công ty TNHH Công Nghệ Jupitech Việt Nam">Công ty TNHH Công Nghệ...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/quan-tri-kinh-doanh/truong-bo-phan-kinh-doanh-c14p1id1410368.html" title="Trưởng bộ phận kinh doanh">Trưởng bộ phận kinh doanh</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-fourseasons-global-jsc-ntd2329457p1.html" title="Fourseasons Global JSC">Fourseasons Global JSC</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/thiet-ke-my-thuat/designer-c32p1id1406832.html" title="Designer">Designer</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-vcn-corp-ntd1596371p1.html" title="VCN Corp">VCN Corp</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ke-toan-kiem-toan/nhan-vien-ke-toan-c30p1id1385291.html" title="Nhân viên kế toán">Nhân viên kế toán</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-mtv-dat-phuong-sai-gon-ntd1688833p1.html" title="Công ty TNHH MTV Đạt Phương Sài Gòn">Công ty TNHH MTV Đạt...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/thu-ky-tro-ly/tro-ly-giam-doc-c91p1id1127073.html" title="Trợ lý giám đốc">Trợ lý giám đốc</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-may-trac-dia-nam-phuong-ntd1227095p1.html" title="Công ty TNHH Máy Trắc địa Nam Phương">Công ty TNHH Máy Trắc...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/bao-ve/nhan-vien-bao-ve-c94p1id1355471.html" title="Nhân viên bảo vệ">Nhân viên bảo vệ</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-dich-vu-bao-ve-thinh-an-ntd2055092p1.html" title="Công ty CP Dịch vụ Bảo vệ Thịnh An">Công ty CP Dịch vụ Bảo...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/lao-dong-pho-thong/nhan-vien-giao-hang-theo-xe-c26p1id1297047.html" title="Nhân viên giao hàng theo xe">Nhân viên giao hàng theo...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-nuoc-uong-tinh-khiet-sai-gon-sapuwa-ntd2198693p1.html" title="Công ty TNHH nước uống tinh khiết Sài Gòn (SAPUWA)">Công ty TNHH nước uống...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/bao-ve/nhan-vien-bao-ve-cong-trinh-thuy-dien-c94p1id1398983.html" title="Nhân viên bảo vệ công trình thủy điện">Nhân viên bảo vệ công...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-dich-vu-bao-ve-thinh-an-ntd2055092p1.html" title="Công ty CP Dịch vụ Bảo vệ Thịnh An">Công ty CP Dịch vụ Bảo...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ky-thuat/pho-giam-doc-ky-thuat-c16p1id1181971.html" title="Phó giám đốc kỹ thuật">Phó giám đốc kỹ thuật</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-dau-tu-xay-dung-cat-tuong-ntd738863p1.html" title="Công ty Cổ Phần Đầu Tư Xây Dựng Cát Tường">Công ty Cổ Phần Đầu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/nhan-vien-kinh-doanh/nhan-vien-kinh-doanh-c96p1id1408417.html" title="Nhân viên kinh doanh">Nhân viên kinh doanh</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-tri-tue-viet-vietclever-group-ntd2080519p1.html" title="Công ty CP Trí Tuệ Việt (VietClever Group)">Công ty CP Trí Tuệ Việt...</a></div>
-                        <div></div>
-                    </div></div>
-                <div class="pageList">
-                    <u class="pageFirst">Đầu</u> <a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D1');">1</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D2');">2</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D3');">3</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D4');">4</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D5');">5</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D10');"><u class="pageLast" style="color:#F20000;">Cuối</u></a>	</div>
-                <div class="clear"></div>
-            </div>
-        </div>                
+        </div>
     </div>
-    <div class="colRight">        
+    <div class="colRight">
         <div class="camNangNTV" style="max-width:300px;">
             <div class="camNangNTV-t">
                 <a style="color: #FFFFFF;font-size: 16px;font-weight: bold;" href="http://www.24h.com.vn/cam-nang-tim-viec-c545.html" title="CẨM NANG NGƯỜI TÌM VIỆC" target="_blank">CẨM NANG TÌM VIỆC</a>
@@ -437,8 +345,8 @@
             </div>
         </div>
         <script type="text/javascript">
-                            var div_cam_nang_tim_viec_trang_hien_tai = 0;
-                            setInterval('cam_nang_tim_viec_nhay_trang(div_cam_nang_tim_viec_trang_hien_tai + 1, "div_cam_nang_tim_viec_", 3)', 20000);</script>
+            var div_cam_nang_tim_viec_trang_hien_tai = 0;
+            setInterval('cam_nang_tim_viec_nhay_trang(div_cam_nang_tim_viec_trang_hien_tai + 1, "div_cam_nang_tim_viec_", 3)', 20000);</script>
         <div class="rightBox">
             <div class="searchBoxTitle" title="Bạn Hãy bấm vào các tiêu thức lọc tìm bên dưới hoặc bấm vào các nút xem thêm để mở ra nhiều lựa chọn hơn!">TÌM KIẾM
             </div>
@@ -674,18 +582,21 @@
                         </tbody></table>
                 </form>
             </div>
-        </div>        
+        </div>
         <div class="boxFacebook">
             <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FNhuCauViecLam&amp;width=285&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:285px; height:290px;" allowTransparency="true"></iframe>
             <div class="clear"></div>
             <div class="FB-line"></div>
         </div>
-                <script type="text/javascript">
-                    (function() {
-                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                            po.src = 'https://apis.google.com/js/plusone.js';
-                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                    })();
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script');
+                po.type = 'text/javascript';
+                po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(po, s);
+            })();
         </script>
     </div>
     <div class="clear"></div>
