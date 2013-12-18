@@ -8,6 +8,9 @@ body {
 .body-background {
 	background: url('../images/bg.jpg') repeat-x top
 }
+#content-detail{
+    background: #fff;
+}
 * {
         margin: 0;
 	font-family: Arial, Helvetica, sans-serif;

@@ -1,16 +1,16 @@
 <?php
-class Taohsuv_model extends CI_Model
+class Taotintd_model extends CI_Model
 {
     public function __construct() {
         parent::__construct();
         $this->load->database();
     }
-    public function save_hsuv(array $data)
+    public function save_tintd(array $data)
     {
-        $this->db->insert('tbl_employers_post',$data);
+        $this->db->insert('tbl_job_post',$data);
         return $this->db->insert_id();
     }
-    public function view_hsuv_detail($id = null){
+    public function tintd_detail($id = null){
        $id = intval($id);
         $this->db->select();
         $this->db->where('u_id',$id);
