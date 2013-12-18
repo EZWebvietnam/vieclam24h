@@ -2415,8 +2415,7 @@ ul.HSMau li a:hover {
 .del:hover {
 	color: #7214ae
 }
-.xoaHoSo {
-	background: url('../images/sprites_ntd_1.gif') -307px -395px no-repeat;
+.xoaHoSo {	
 	padding: 15px 0 12px 33px;
 	font-size: 12px;
 	color: #333;
@@ -2429,7 +2428,6 @@ ul.HSMau li a:hover {
 }
 
 .dangHoSo {
-	background: url('../images/sprites.gif') -444px -198px no-repeat;
 	padding: 15px 0 12px 33px;
 	font-size: 12px;
 	color: #333;
@@ -2453,7 +2451,6 @@ ul.HSMau li a:hover {
 	color: #7214ae
 }
 .phucHoi {
-	background: url('../images/sprites.gif') -307px -548px no-repeat;
 	padding: 15px 0 12px 38px;
 	font-size: 12px;
 	color: #333;
@@ -2777,7 +2774,6 @@ ul.HSMau li a:hover {
 	color: #1c8468
 }
 .khongtrungTuyen {
-	background: url('../images/sprites_ntd.gif') -307px -395px no-repeat;
 	padding: 15px 0 12px 33px;
 	font-size: 12px;
 	color: #333;

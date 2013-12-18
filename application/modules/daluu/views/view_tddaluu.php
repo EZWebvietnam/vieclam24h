@@ -63,27 +63,26 @@
                         <td class="tb-row-W" align="center"><?php echo date('d/m/Y',$td_luu['e_datesave']); ?></td>
                         <td class="tb-row-W">
                             <div class="borderBot padTop5">
-                                <a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $td_luu['e_id']; ?>-<?php echo mb_strtolower(url_title(removesign($tddaluu_detail[0]['e_title']))) ?>" target="_blank" title="Click để xem thông tin chi tiết việc làm">Xem</a> | <a href="javascript: if (dat_trang_thai_dang_xu_ly()) {ntv_quan_tri_xoa_1_viec_lam_da_luu(1391037); }" title="Xoá việc làm đã lưu">Xóa</a>
-                            </div>
-                            <div class="padTop5">
-                                <a href="/ntv-nop-ho-so-truc-tuyen.html?ds_id_tin_td=1391037" target="_blank" title="Ứng tuyển vào vị trí này">Ứng tuyển</a>
-                            </div></td>
+                                <?php 
+                                if($td_luu['e_status']==1)
+                                {
+                                ?>
+                                <a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $td_luu['e_id']; ?>-<?php echo mb_strtolower(url_title(removesign($td_luu['e_title']))) ?>" target="_blank" title="Xem thông tin chi tiết tin tìm việc">Xem</a> |
+                                <?php } else {?>
+                                <a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $td_luu['e_id']; ?>-<?php echo mb_strtolower(url_title(removesign($td_luu['e_title']))) ?>" target="_blank" title="Xem thông tin chi tiết tin tìm việc">Xem</a> |
+                                <?php } ?>
+                                    <a href="<?php echo base_url(); ?>ung-tuyen/<?php echo $td_luu['e_id']; ?>-<?php echo mb_strtolower(url_title(removesign($td_luu['e_title']))) ?>" target="_blank" title="Ứng tuyển vào vị trí này">Ứng tuyển</a>
+                                </div>
+                            </td>
                     </tr>
                     <?php } ?>
                     </tbody>
                 </table>
-                <table width="100%" class="padTop10">
-                    <tbody>
-                        <tr>
-                            <td height="30" class="borderBot" width="400"><a href="javascript:select_or_unselect_group_checkbox('checkbox_viec_lam_da_luu[',']',1,true)" title="Chọn tất cả các ứng viên trong trang" class="checkAll">Chọn tất cả</a><a href="javascript:select_or_unselect_group_checkbox('checkbox_viec_lam_da_luu[',']',1,false)" title="Bỏ chọn tất cả các ứng viên trong trang" class="unCheck">Bỏ chọn tất cả</a></td>
-                            <td class="borderBot"><div class="pageList"></div></td>
-                        </tr>
-                    </tbody>
-                </table>
+                
                 <table width="100%">
                     <tbody>
                         <tr>
-                            <td height="30" class="borderBot" width="700"><a href="javascript: if (dat_trang_thai_dang_xu_ly()) {ntv_quan_tri_xoa_ds_viec_lam_da_luu(); }" title="Xoá việc làm đã lưu" class="xoaHoSo">Xóa tin</a><a href="javascript: ntv_quan_tri_ung_tuyen_ds_viec_lam_da_luu(',~,')" title="Ứng tuyển vào các vị trí tuyển dụng đã chọn" class="dangHoSo">Ứng tuyển</a></td>
+                            
                             <td class="borderBot" align="right"><b>Sắp xếp theo: </b>
                                 <select class="dropBox" name="select_sap_xep_bottom" id="select_sap_xep_bottom" style="width:200px;" onchange="ntv_quan_tri_sap_xep_viec_lam_da_luu('select_sap_xep_bottom', 'select_sap_xep_top')">
                                     <option value="thoi_gian_luu_tin_giam" selected="">Thời gian lưu tin giảm dần</option>

@@ -1,11 +1,11 @@
 <?php
-class Daluu_post extends CI_Model
+class Daungtuyen_post extends CI_Model
 {
     public function __construct() {
         parent::__construct();
         $this->load->database();
     }
-    public function view_tddaluu_detail($id = null){
+    public function view_daungtuyen_detail($id = null){
         $id = intval($id);
         $this->db->select();
         $this->db->where('e_id',$id);
@@ -20,7 +20,7 @@ class Daluu_post extends CI_Model
                 . " FROM tbl_job_post"
                 . " INNER JOIN tbl_save_tin ON tbl_job_post.e_id = tbl_save_tin.id_job "
                 . " INNER JOIN tbl_job_user ON tbl_job_user.u_id = tbl_job_post.u_id"
-                . " WHERE tbl_save_tin.id_user = $id ";
+                . " WHERE tbl_save_tin.id_send = $id ";
         $query = $this->db->query($sql_join);
         return $query->result_array();
     }
