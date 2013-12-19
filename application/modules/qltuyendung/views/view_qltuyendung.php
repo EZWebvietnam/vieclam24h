@@ -114,9 +114,10 @@ if ($is_login == 1) {
                                     Đã đăng					</td>
                                 <td class="tb-row-W" align="center">0 <br> </td>
                                 <td class="ntd_tb-row-W">
-                                    <div class="borderBot padTop5"><a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $qltuyendung['e_id']; ?>-<?php echo mb_strtolower(url_title(removesign($qltuyendung['e_title']))) ?>" title="" target="_blank">Xem</a> | 
-                                        <a href="/ntd-trang-quan-tri-cap-nhat-tin-tuyen-dung.html?id_tin_td=1407482" title="">Sửa</a> | 
-                                        <a href='javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_doi_trang_thai_1_ttd(1407482,"xoa_tam"); }' title="Xoá tạm tin tuyển dụng">Xóa</a></div><div class="borderBot padTop5"><a href="javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_lam_moi_1_ttd(1407482); }" title="Làm mới tin tuyển dụng">Làm mới</a> | <a href="javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_gia_han_1_ttd(2384130,1407482); }" title="Gia hạn tin tuyển dụng">Gia hạn</a></div><div class="padTop5"><a href="javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_xuat_ban_them_1_ttd(1407482); }" title="Xuất bản thêm tin tuyển dụng">Xuất bản thêm</a> | <a href='javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_doi_trang_thai_1_ttd(1407482,"an_tin"); }' title="Ẩn tin tuyển dụng, không cho hiển thị nữa">Ẩn tin</a></div>					</td>
+                                        <div class="borderBot padTop5"><a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $qltuyendung['e_id']; ?>-<?php echo mb_strtolower(url_title(removesign($qltuyendung['e_title']))) ?>" title="" target="_blank">Xem</a> | 
+                                            <a href="<?php echo base_url(); ?>sua-tintuyendung/<?php echo $qltuyendung['e_id']; ?>" title="">Sửa</a> | 
+                                            <a onclick="return confirm('Bạn có chắc muốn xóa hồ sơ không ?')" href='<?php echo base_url(); ?>xoa-tin-td/<?php echo $qltuyendung['e_id']; ?>/<?php echo mb_strtolower(url_title(removesign($qltuyendung['e_title']))) ?>' title="Xoá tạm hồ sơ">Xóa</a></div><div class="borderBot padTop5"><a href="javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_lam_moi_1_ttd(1407482); }" title="Làm mới tin tuyển dụng">Làm mới</a> | <a href="javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_gia_han_1_ttd(2384130,1407482); }" title="Gia hạn tin tuyển dụng">Gia hạn</a></div>
+                                    </td>
                             
                             </tr>
                             <?php } ?>

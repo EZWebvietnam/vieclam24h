@@ -8,29 +8,29 @@
         <div class="group-3col">
             <div class="vieclamhot-t-ntv"></div>
             <div class="vieclamhot-c-ntv">                
+                <?php
+                $i = 1;
+                foreach ($tuyendung_detail as $job) {
+                    if ($i % 2 == 1) {
+                        ?>
+
+                    <?php } ?>
+                    <div class="col3">
+                        <div class="vieclamItem">
+                            <div class="ten-chinh"><a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $job['e_id'] ?>-<?php echo mb_strtolower(url_title(removesign($job['e_title']))) ?>" title="<?php echo $job['e_title'] ?>" style="font-weight:bold;"><?php echo $job['e_title'] ?></a></div>
+                            <div class="ten-phu"><a href="#" title="<?php echo $job['u_companyName'] ?>"><?php echo $job['u_companyName'] ?></a></div>
+                            <div></div>                                    
+                        </div>
+                    </div>
                     <?php
-                            $i = 1;
-                            foreach ($tuyendung_detail as $job) {
-                        if ($i % 2 == 1) {
-                                    ?>
-                                
-                                    <?php } ?>
-                            <div class="col3">
-                                <div class="vieclamItem">
-                                    <div class="ten-chinh"><a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $job['e_id'] ?>-<?php echo mb_strtolower(url_title(removesign($job['e_title']))) ?>" title="<?php echo $job['e_title'] ?>" style="font-weight:bold;"><?php echo $job['e_title'] ?></a></div>
-                                    <div class="ten-phu"><a href="#" title="<?php echo $job['u_companyName'] ?>"><?php echo $job['u_companyName'] ?></a></div>
-                                    <div></div>                                    
-                                </div>
-                            </div>
-                                <?php
-                                    if ($i % 2 == 0) {
-                                        ?>
-                                    
-                                <?php } ?>
-                                <?php
-                                $i++;
-                            }
-                            ?>                    
+                    if ($i % 2 == 0) {
+                        ?>
+
+                    <?php } ?>
+                    <?php
+                    $i++;
+                }
+                ?>                    
                 <div class="clear"></div>
                 <div class="chiTiet"><a href="/viec-lam-hot-l75c0.html" title="Xem danh sách việc làm HOT">Xem danh sách chi tiết</a></div>
             </div>
@@ -45,34 +45,33 @@
                             </td>
                             <td width="50%" align="right" style="font-size: 13px;color: #FFFF33;">
                                 Sắp xếp theo: <a href="javascript:ds_nganh_nghe_trang_chu_ntv_theo_ten();" style="font-size: 13px;color: #FFFF33;">ABC</a> 
-                    </td>
-                    </tr>
+                            </td>
+                        </tr>
                     </tbody></table>
             </div>
             <div class="group-3col">
                 <?php
-                            $i = 1;
-                            foreach ($list_cate_job as $k=>$job_cate) {
+                $i = 1;
+                foreach ($list_cate_job as $k => $job_cate) {
 
-                                if ($i % 3 == 1) {
-                                    ?>
-                                    <?php } ?>
-                                    <div class="col3">
-                                            <div class="ten-chinh" style="font-weight:bold;color:black;">
-                                                <a href="<?php echo base_url(); ?>nganh-nghe/<?php echo $k ?>-<?php echo mb_strtolower(url_title(removesign($job_cate))) ?>"  title="<?php echo $job_cate ?>" target="_blank"> <?php echo $job_cate ?></a>
-                                            </div>
-                                    </div>
-                                    <?php
-                                    if ($i % 3 == 0) {
-                                        ?>
-                                <?php } ?>
-                                <?php
-                                $i++;
-                            }
-                            ?>
+                    if ($i % 3 == 1) {
+                        ?>
+                    <?php } ?>
+                    <div class="col3">
+                        <div class="ten-chinh" style="font-weight:bold;color:black;">
+                            <a href="<?php echo base_url(); ?>nganh-nghe/<?php echo $k ?>-<?php echo mb_strtolower(url_title(removesign($job_cate))) ?>"  title="<?php echo $job_cate ?>" target="_blank"> <?php echo $job_cate ?></a>
+                        </div>
+                    </div>
+                    <?php
+                    if ($i % 3 == 0) {
+                        ?>
+                    <?php } ?>
+                    <?php
+                    $i++;
+                }
+                ?>
                 <div class="clear"></div>
             </div>
-
         </div>
 
         <div name="div_ntv_viec_lam_moi_nhat_trang_chu" id="div_ntv_viec_lam_moi_nhat_trang_chu">
@@ -91,162 +90,29 @@
                         </tr>
                     </tbody></table>
             </div>
-            <div class="group-3col"><div class="col3">
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ban-hang/nhan-vien-ban-hang-c63p1id1367669.html" title="Nhân viên bán hàng">Nhân viên bán hàng</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-fourseasons-global-jsc-ntd2329457p1.html" title="Fourseasons Global JSC">Fourseasons Global JSC</a></div>
-                        <div></div>
+            <div class="group-3col">
+                <?php
+                $i = 1;
+                foreach ($sanggia_detail as $jobpost) {
+
+                    if ($i % 3 == 1) {
+                        ?>
+                    <?php } ?>
+                    <div class="col3">
+                        <div class="ten-chinh"><a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $jobpost['e_id'] ?>-<?php echo mb_strtolower(url_title(removesign($jobpost['e_title']))) ?>"><?php echo $jobpost['e_title'] ?></a></div>
+                        <div class="ten-phu"><a href="#" title="<?php echo $jobpost['u_companyName'] ?>"><?php echo $jobpost['u_companyName'] ?></a></div>
                     </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ban-hang/quan-ly-cua-hang-c63p1id1405793.html" title="Quản lý Cửa hàng">Quản lý Cửa hàng</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-fourseasons-global-jsc-ntd2329457p1.html" title="Fourseasons Global JSC">Fourseasons Global JSC</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ban-hang/cua-hang-truong-moschino-c63p1id1410377.html" title="Cửa hàng trưởng Moschino">Cửa hàng trưởng Moschino</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-fourseasons-global-jsc-ntd2329457p1.html" title="Fourseasons Global JSC">Fourseasons Global JSC</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/dien-tu-vien-thong/tuyen-gap-nhan-vien-cskh-mang-vinaphone-c54p1id1408193.html" title="Tuyển gấp nhân viên CSKH Mạng Vinaphone">Tuyển gấp nhân viên CSKH...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-mocap-viet-nam-ntd1814458p1.html" title="Công ty Cổ phần Mocap Việt Nam">Công ty Cổ phần Mocap...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/to-chuc-su-kien-qua-tang/nhan-vien-tu-van-to-chuc-su-kien-c83p1id1405942.html" title="Nhân viên tư vấn tổ chức sự kiện">Nhân viên tư vấn tổ chức...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-van-hoa-truyen-thong-new-ntd1994331p1.html" title="Công ty TNHH Văn hóa Truyền Thông NEW">Công ty TNHH Văn hóa Truyền...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/dien-dien-tu/instrument-engineer-5-candidates-c8p1id1089898.html" title="Instrument Engineer - 5 candidates">Instrument Engineer - 5 candidates</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-toyo-vietnam-ntd1828769p1.html" title="Toyo Vietnam">Toyo Vietnam</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/nhan-vien-kinh-doanh/nhan-vien-kinh-doanh-c96p1id1412610.html" title="Nhân viên kinh doanh">Nhân viên kinh doanh</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-chau-a-toan-cau-ntd2390252p1.html" title="Công Ty Cổ Phần Châu Á – Toàn Cầu">Công Ty Cổ Phần Châu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-cung/mang/nhan-vien-quan-tri-mang-nhan-vien-seo-c5p1id1412285.html" title="Nhân viên quản trị mạng, nhân viên Seo">Nhân viên quản trị mạng,...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-thiet-ke-xay-dung-kien-truc-viet-ntd2298709p1.html" title="Công ty CP Thiết Kế - Xây dựng Kiến Trúc Việt">Công ty CP Thiết Kế...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ky-thuat/truong-phong-ky-thuat-c16p1id687077.html" title="Trưởng phòng kỹ thuật">Trưởng phòng kỹ thuật</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-dau-tu-xay-dung-cat-tuong-ntd738863p1.html" title="Công ty Cổ Phần Đầu Tư Xây Dựng Cát Tường">Công ty Cổ Phần Đầu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/thuc-tap/thuc-tap-lap-trinh-web-hay-soft-c52p1id1336050.html" title="Thực tập lập trình web hay Soft">Thực tập lập trình web...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-tnhh-tm-dv-khai-hop-ntd2096242p1.html" title="TNHH TM DV Khai Hợp">TNHH TM DV Khai Hợp</a></div>
-                        <div></div>
-                    </div></div><div class="col3">
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-mem/seniornet-c74p1id1411188.html" title="Senior.NET">Senior.NET</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-cong-nghe-jupitech-viet-nam-ntd2349609p1.html" title="Công ty TNHH Công Nghệ Jupitech Việt Nam">Công ty TNHH Công Nghệ...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-mem/tuyen-nhan-vien-lap-trinh-tren-ios-c74p1id1411109.html" title="Tuyển nhân viên lập trình trên iOS">Tuyển nhân viên lập trình...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-cong-nghe-jupitech-viet-nam-ntd2349609p1.html" title="Công ty TNHH Công Nghệ Jupitech Việt Nam">Công ty TNHH Công Nghệ...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-mem/phan-tich-web-c74p1id1406783.html" title="Phân tích web">Phân tích web</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-vcn-corp-ntd1596371p1.html" title="VCN Corp">VCN Corp</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/buu-chinh/nhan-vien-truc-tong-dai-vinaphone-c2p1id1408197.html" title="Nhân viên trực tổng đài Vinaphone">Nhân viên trực tổng đài...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-mocap-viet-nam-ntd1814458p1.html" title="Công ty Cổ phần Mocap Việt Nam">Công ty Cổ phần Mocap...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/thu-ky-tro-ly/tro-ly-kinh-doanh-ban-hang-c91p1id1148342.html" title="Trợ lý kinh doanh bán hàng">Trợ lý kinh doanh bán hàng</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-may-trac-dia-nam-phuong-ntd1227095p1.html" title="Công ty TNHH Máy Trắc địa Nam Phương">Công ty TNHH Máy Trắc...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/dau-khi-hoa-chat/instrument-engineer-05-candidates-c6p1id1089897.html" title="Instrument Engineer  05 candidates">Instrument Engineer  05 candidates</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-toyo-vietnam-ntd1828769p1.html" title="Toyo Vietnam">Toyo Vietnam</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/bao-ve/nhan-vien-bao-ve-hoi-so-vpbank-c94p1id1360306.html" title="Nhân viên Bảo vệ Hội sở VPBank">Nhân viên Bảo vệ Hội...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-dich-vu-bao-ve-thinh-an-ntd2055092p1.html" title="Công ty CP Dịch vụ Bảo vệ Thịnh An">Công ty CP Dịch vụ Bảo...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ke-toan-kiem-toan/ke-toan-tong-hop-c30p1id938454.html" title="Kế toán tổng hợp">Kế toán tổng hợp</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-dau-tu-xay-dung-cat-tuong-ntd738863p1.html" title="Công ty Cổ Phần Đầu Tư Xây Dựng Cát Tường">Công ty Cổ Phần Đầu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/xay-dung/chi-huy-truong-cong-trinh-c41p1id488812.html" title="Chỉ huy trưởng công trình">Chỉ huy trưởng công trình</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-dau-tu-xay-dung-cat-tuong-ntd738863p1.html" title="Công ty Cổ Phần Đầu Tư Xây Dựng Cát Tường">Công ty Cổ Phần Đầu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/hanh-chinh-van-phong/tuyen-gap-nhan-vien-hanh-chinh-van-thu-c38p1id1326692.html" title="Tuyển gấp Nhân viên hành chính văn thư">Tuyển gấp Nhân viên hành...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-tri-tue-viet-vietclever-group-ntd2080519p1.html" title="Công ty CP Trí Tuệ Việt (VietClever Group)">Công ty CP Trí Tuệ Việt...</a></div>
-                        <div></div>
-                    </div></div><div class="col3">
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/it-phan-mem/tuyen-nhan-vien-php-c74p1id1411183.html" title="Tuyển nhân viên Php">Tuyển nhân viên Php</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-cong-nghe-jupitech-viet-nam-ntd2349609p1.html" title="Công ty TNHH Công Nghệ Jupitech Việt Nam">Công ty TNHH Công Nghệ...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/quan-tri-kinh-doanh/truong-bo-phan-kinh-doanh-c14p1id1410368.html" title="Trưởng bộ phận kinh doanh">Trưởng bộ phận kinh doanh</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-fourseasons-global-jsc-ntd2329457p1.html" title="Fourseasons Global JSC">Fourseasons Global JSC</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/thiet-ke-my-thuat/designer-c32p1id1406832.html" title="Designer">Designer</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-vcn-corp-ntd1596371p1.html" title="VCN Corp">VCN Corp</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ke-toan-kiem-toan/nhan-vien-ke-toan-c30p1id1385291.html" title="Nhân viên kế toán">Nhân viên kế toán</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-mtv-dat-phuong-sai-gon-ntd1688833p1.html" title="Công ty TNHH MTV Đạt Phương Sài Gòn">Công ty TNHH MTV Đạt...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/thu-ky-tro-ly/tro-ly-giam-doc-c91p1id1127073.html" title="Trợ lý giám đốc">Trợ lý giám đốc</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-may-trac-dia-nam-phuong-ntd1227095p1.html" title="Công ty TNHH Máy Trắc địa Nam Phương">Công ty TNHH Máy Trắc...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/bao-ve/nhan-vien-bao-ve-c94p1id1355471.html" title="Nhân viên bảo vệ">Nhân viên bảo vệ</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-dich-vu-bao-ve-thinh-an-ntd2055092p1.html" title="Công ty CP Dịch vụ Bảo vệ Thịnh An">Công ty CP Dịch vụ Bảo...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/lao-dong-pho-thong/nhan-vien-giao-hang-theo-xe-c26p1id1297047.html" title="Nhân viên giao hàng theo xe">Nhân viên giao hàng theo...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-tnhh-nuoc-uong-tinh-khiet-sai-gon-sapuwa-ntd2198693p1.html" title="Công ty TNHH nước uống tinh khiết Sài Gòn (SAPUWA)">Công ty TNHH nước uống...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/bao-ve/nhan-vien-bao-ve-cong-trinh-thuy-dien-c94p1id1398983.html" title="Nhân viên bảo vệ công trình thủy điện">Nhân viên bảo vệ công...</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-dich-vu-bao-ve-thinh-an-ntd2055092p1.html" title="Công ty CP Dịch vụ Bảo vệ Thịnh An">Công ty CP Dịch vụ Bảo...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/ky-thuat/pho-giam-doc-ky-thuat-c16p1id1181971.html" title="Phó giám đốc kỹ thuật">Phó giám đốc kỹ thuật</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-co-phan-dau-tu-xay-dung-cat-tuong-ntd738863p1.html" title="Công ty Cổ Phần Đầu Tư Xây Dựng Cát Tường">Công ty Cổ Phần Đầu...</a></div>
-                        <div></div>
-                    </div>
-                    <div class="vieclamItem">
-                        <div class="ten-chinh"><a href="/nhan-vien-kinh-doanh/nhan-vien-kinh-doanh-c96p1id1408417.html" title="Nhân viên kinh doanh">Nhân viên kinh doanh</a></div>
-                        <div class="ten-phu"><a href="/danh-sach-cac-tin-tuyen-dung-cong-ty-cp-tri-tue-viet-vietclever-group-ntd2080519p1.html" title="Công ty CP Trí Tuệ Việt (VietClever Group)">Công ty CP Trí Tuệ Việt...</a></div>
-                        <div></div>
-                    </div></div>
-                <div class="pageList">
-                    <u class="pageFirst">Đầu</u> <a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D1');">1</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D2');">2</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D3');">3</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D4');">4</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D5');">5</a> &nbsp;<a rel="nofollow" href="javascript:AjaxAction('div_ntv_viec_lam_moi_nhat_trang_chu','%2Fajax%2Fntv_viec_lam_moi_nhat_trang_chu%2Findex%2F%3Fid_tinh%3D0%26number_items%3D30%2F1%2F30%2F0%26page%3D10');"><u class="pageLast" style="color:#F20000;">Cuối</u></a>	</div>
-                <div class="clear"></div>
+                    <?php
+                    if ($i % 3 == 0) {
+                        ?>
+                    <?php } ?>
+                    <?php
+                    $i++;
+                }
+                ?>
             </div>
-        </div>                
+            <div class="clear"></div>
+        </div>                        
     </div>
     <div class="colRight">        
         <div class="camNangNTV" style="max-width:300px;">
@@ -437,8 +303,8 @@
             </div>
         </div>
         <script type="text/javascript">
-                            var div_cam_nang_tim_viec_trang_hien_tai = 0;
-                            setInterval('cam_nang_tim_viec_nhay_trang(div_cam_nang_tim_viec_trang_hien_tai + 1, "div_cam_nang_tim_viec_", 3)', 20000);</script>
+            var div_cam_nang_tim_viec_trang_hien_tai = 0;
+            setInterval('cam_nang_tim_viec_nhay_trang(div_cam_nang_tim_viec_trang_hien_tai + 1, "div_cam_nang_tim_viec_", 3)', 20000);</script>
         <div class="rightBox">
             <div class="searchBoxTitle" title="Bạn Hãy bấm vào các tiêu thức lọc tìm bên dưới hoặc bấm vào các nút xem thêm để mở ra nhiều lựa chọn hơn!">TÌM KIẾM
             </div>
@@ -680,12 +546,15 @@
             <div class="clear"></div>
             <div class="FB-line"></div>
         </div>
-                <script type="text/javascript">
-                    (function() {
-                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                            po.src = 'https://apis.google.com/js/plusone.js';
-                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-                    })();
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script');
+                po.type = 'text/javascript';
+                po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(po, s);
+            })();
         </script>
     </div>
     <div class="clear"></div>

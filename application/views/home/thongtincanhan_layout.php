@@ -53,59 +53,94 @@
 
                                                             <ul class="menu1">
                                                                 <li class="first leaf">
-                                                                    <a href="/" title="" class="active">Tìm việc làm</a>
+                                                                    <a href="<?php echo base_url(); ?>" title="Tìm việc làm">Tìm việc làm</a>
                                                                 </li>
                                                                 <li class="leaf">
-                                                                    <a href="/viec-lam-moi" title="">Tìm ứng viên</a>
+                                                                    <a href="<?php echo base_url(); ?>tim-ung-vien" title="Tìm ứng viên">Tìm ứng viên</a>
                                                                 </li>
                                                                 <li class="leaf">
-                                                                    <a href="/tao-ho-so-tung-buoc" title="">Cẩm nang</a>
+                                                                    <a href="#" title="">Cẩm nang</a>
                                                                 </li>
                                                                 <li class="leaf">
-                                                                    <span href="/tao-ho-so-tung-buoc" title="">nhucauvieclam.vn</span>
+                                                                    <span href="nhucauvieclam.net" title="">nhucauvieclam</span>
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </header>
-
+                                            <div id="hotline">
+                                                <div id="hotline-inner">
+                                                </div>
+                                            </div>
+                                            <?php
+                                                if ($is_login == 1) {
+                                                    if ($this->session->userdata['u_role'] == 2) {
+                                                        ?>
                                             <div class="ntv-qt-menu-sub" id="menu_lv2_51" style="">
                                                 <ul>
                                                     <li>
-                                                        <a id="a_menu_lv2_60" href="/ntv-trang-chu-quan-tri.html" title="Quản lý tìm việc" onclick="change_menu_onclick(51)">Quản lý tìm việc</a>
+                                                        <a id="a_menu_lv2_60" href="<?php echo base_url(); ?>quanly-timviec" title="Quản lý tìm việc" >Quản lý tìm việc</a>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a id="a_menu_lv2_141" href="/ntv-trang-quan-tri-tin-tim-viec.html" title="Hồ sơ đã đăng" onclick="change_menu_onclick(51)">Hồ sơ đã đăng</a>
+                                                        <a id="a_menu_lv2_141" href="<?php echo base_url(); ?>hsda-dang" title="Hồ sơ đã đăng" >Hồ sơ đã đăng</a>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a id="a_menu_lv2_59" href="/ntv-trang-quan-tri-cap-nhat-tin-tim-viec.html" title="Tạo HS tìm việc" onclick="change_menu_onclick(51)">Tạo HS tìm việc</a>
+                                                        <a id="a_menu_lv2_59" href="<?php echo base_url(); ?>tao-hsungvien" title="Tạo HS tìm việc" >Tạo HS tìm việc</a>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a id="a_menu_lv2_142" href="/ntv-trang-quan-tri-viec-lam-da-luu.html" title="VL đã lưu" onclick="change_menu_onclick(51)">VL đã lưu</a>
+                                                        <a id="a_menu_lv2_142" href="<?php echo base_url(); ?>daluu" title="VL đã lưu" >VL đã lưu</a>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a id="a_menu_lv2_143" href="/ntv-trang-quan-tri-viec-lam-da-ung-tuyen.html" title="VL đã ứng tuyển" onclick="change_menu_onclick(51)">VL đã ứng tuyển</a>
+                                                        <a id="a_menu_lv2_143" href="<?php echo base_url(); ?>da-ung-tuyen" title="VL đã ứng tuyển" >VL đã ứng tuyển</a>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a id="a_menu_lv2_61" href="/ntv-trang-quan-tri-ho-so-ca-nhan.html" title="Hồ sơ cá nhân (CV)" onclick="change_menu_onclick(51)">Hồ sơ cá nhân (CV)</a>
+                                                        <a id="a_menu_lv2_61" href="<?php echo base_url(); ?>cv" title="Hồ sơ cá nhân (CV)">Hồ sơ cá nhân (CV)</a>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a id="a_menu_lv2_62" href="/ntv-trang-quan-tri-thong-tin-tai-khoan.html" title="Thông tin cá nhân" onclick="change_menu_onclick(51)">Thông tin cá nhân</a>
+                                                        <a id="a_menu_lv2_62" href="<?php echo base_url(); ?>thongtin-canhan" title="Thông tin cá nhân">Thông tin cá nhân</a>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a id="a_menu_lv2_63" href="/ntv-trang-quan-tri-xem-thong-bao.html" title="Thông báo" onclick="change_menu_onclick(51)">Thông báo</a>
+                                                        <a id="a_menu_lv2_63" href="#" title="Thông báo">Thông báo</a>
                                                     </li>
                                                     
                                                 </ul>
                                             </div>
+                                            <?php } else { ?>
+                                            <div class="ntd-qt-menu-sub" id="menu_lv2_77" style="">
+                                                <ul>
+                                                    <li>
+                                                        <a id="a_menu_lv2_85" href="<?php echo base_url(); ?>quanly-tuyendung" title="Quản lý tuyển dụng">Quản lý tuyển dụng</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="a_menu_lv2_148" href="<?php echo base_url(); ?>tintd-dadang" title="Tin TD đã đăng">Tin TD đã đăng</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="a_menu_lv2_84" href="<?php echo base_url(); ?>tao-tintuyendung" title="Tạo tin TD mới">Tạo tin TD mới</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="a_menu_lv2_86" href="<?php echo base_url(); ?>quanly-hoso-ungvien" title="Quản lý hồ sơ ứng viên">Quản lý hồ sơ ứng viên</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="a_menu_lv2_151" href="<?php echo base_url(); ?>thongtin-ntd" title="Thông tin NTD">Thông tin NTD</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="a_menu_lv2_160" href="#" title="Thông báo của BQT">Thông báo của BQT</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="a_menu_lv2_162" target="_blank" href="#" title="Liên hệ quảng cáo">Liên hệ quảng cáo</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <?php }
+                                                } ?>
                                             <input type="hidden" name="hdn_menu_selected" id="hdn_menu_selected" value="51">
                                                 <script type="text/javascript">
                                                     v_menu_selected = document.getElementById("hdn_menu_selected");

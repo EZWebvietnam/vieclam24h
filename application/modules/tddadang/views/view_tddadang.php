@@ -131,7 +131,7 @@ if ($is_login == 1) {
                         </td>
                         <td class="ntd_tb-row-W">
                             <div class="borderBot padTop5">
-                                <a href="/bao-ve/cong-tac-vien-kinh-doanh-tinh-c94p1id1407482.html" target="_blank" title="">Xem</a> | <a href='javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_doi_trang_thai_1_ttd(1407482,"xoa_tam"); }' title="Xoá tạm tin tuyển dụng">Xóa</a>
+                                <a href="<?php echo base_url(); ?>tin-tuyen-dung/<?php echo $tddadang['e_id']; ?>-<?php echo mb_strtolower(url_title(removesign($tddadang['e_title']))) ?>" target="_blank" title="">Xem</a> | <a href="<?php echo base_url(); ?>sua-tintuyendung/<?php echo $tddadang['e_id']; ?>" title="Sửa hồ sơ">Sửa</a> | <a onclick="return confirm('Bạn có chắc muốn xóa hồ sơ không ?')" href='<?php echo base_url(); ?>xoa-tin-td/<?php echo $tddadang['e_id']; ?>/<?php echo mb_strtolower(url_title(removesign($tddadang['e_title']))) ?>' title="Xoá tạm hồ sơ">Xóa</a> 
                             </div>
                             <div class="borderBot padTop5">
                                 <a href='javascript: if (dat_trang_thai_dang_xu_ly()) {ntd_quan_tri_doi_trang_thai_1_ttd(1407482,"huy_dang_tin"); }' title="Huỷ đăng tin tuyển dụng">Huỷ đăng tin</a>

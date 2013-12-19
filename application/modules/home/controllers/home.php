@@ -16,7 +16,8 @@ class Home extends MY_Controller
         } else {
             $this->data['is_login'] = 0;
         }
-        $this->data['tuyendung_detail']= $this->home_model->hot_post();        
+        $this->data['tuyendung_detail']= $this->home_model->hot_post();
+        $this->data['sanggia_detail']= $this->home_model->sanggia_post();
         $this->data['job_list'] = $this->home_model->user_post();        
         $this->data['main_content'] = 'view_home';
         $this->load->view('home/home_layout',$this->data);
